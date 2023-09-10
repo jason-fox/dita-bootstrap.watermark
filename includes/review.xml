@@ -1,6 +1,6 @@
 <div class="alert alert-warning d-flex justify-content-center p-1">
   <div class="align-self-center">
-    <p class="mb-1">
+    <p class="mb-1 badge text-bg-warning">
       For Review
     </p>
   </div>
