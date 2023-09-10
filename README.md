@@ -3,7 +3,6 @@
 
 [![license](https://img.shields.io/github/license/jason-fox/fox.jason.watermark.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![DITA-OT 4.1](https://img.shields.io/badge/DITA--OT-4.1-blue.svg)](http://www.dita-ot.org/4.1)
-[![Documentation Status](https://readthedocs.org/projects/watermarkdita-ot/badge/?version=latest)](https://watermarkdita-ot.readthedocs.io/en/latest/?badge=latest)
 
 This is a [DITA-OT Plug-in](https://www.dita-ot.org/plugins) to add a watermark to generated HTML. The plugin
 extends the DITA Bootstrap HTML.
