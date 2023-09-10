@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?>
+<!--
+  This file is part of the DITA Bootstrap Watermark plug-in for DITA Open Toolkit.
+  See the accompanying LICENSE file for applicable licenses.
+-->
+<plugin id="fox.jason.dita-bootstrap.watermark" version="1.0.0">
+  <require plugin="fox.jason.extend.css"/>
+  <require plugin="net.infotexture.dita-bootstrap"/>
+  <feature extension="ant.import" file="process_watermark.xml"/>
+
+  <feature extension="bootstrap.process.pre" value="bootstrap.watermark.init"/>
+  <feature extension="extend.css.process" value="bootstrap.watermark.css.copy"/>
+
+  <transtype name="html5-bootstrap" extends="html5">
+    <param
+      name="bootstrap.watermark"
+      desc="The name of the watermark to use on the document"
+      type="enum">
+      <val default="true">draft</val>
+      <val>review</val>
+      <val>final</val>
+      <val>none</val>
+    </param>
+  </transtype>
+</plugin>

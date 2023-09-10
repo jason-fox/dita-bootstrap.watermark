@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--ant-->
+<!--
+  This file is part of the DITA Bootstrap Watermark plug-in for DITA Open Toolkit.
+  See the accompanying LICENSE file for applicable licenses.
+-->
+<project
+  name="fox.jason.dita-bootstrap.watermark"
+  xmlns:if="ant:if"
+  xmlns:unless="ant:unless"
+>
+  <!--
+    Setting up Watermark processing. Sets up ANT variables
+  -->
+  <target name="bootstrap.watermark.init" description="Setting up watermark processing">
+
+    <property name="is.Bootstrap" value="true"/>
+    <property name="bootstrap.watermark" value="draft"/>
+
+    <condition property="bootstrap.watermark.ftr.include" value="yes">
+      <and>
+        <or>
+          <equals arg1="${bootstrap.watermark}" arg2="draft"/>
+          <equals arg1="${bootstrap.watermark}" arg2="review"/>
+          <equals arg1="${bootstrap.watermark}" arg2="final"/>
+        </or>
+        <istrue value="${is.Bootstrap}"/>
+      </and>
+    </condition>
+
+    <condition property="bootstrap.watermark.css.include" value="yes">
+      <or>
+        <equals arg1="${bootstrap.watermark}" arg2="draft"/>
+        <equals arg1="${bootstrap.watermark}" arg2="review"/>
+      </or>
+    </condition>
+
+    <property
+      if:set="bootstrap.watermark.ftr.include"
+      name="bootstrap.sidebar.ftr"
+      value="${dita.plugin.fox.jason.dita-bootstrap.watermark.dir}/includes/${bootstrap.watermark}.xml"
+    />
+
+  </target>
+
+  <target
+    if="bootstrap.watermark.css.include"
+    name="bootstrap.watermark.css.copy">
+
+    <loadfile
+      property="bootstrap.watermark.css"
+      srcFile="${dita.plugin.fox.jason.dita-bootstrap.watermark.dir}/css/${bootstrap.watermark}.css"
+    />
+    <echo
+      append="true"
+      message="${line.separator}${bootstrap.watermark.css}"
+      file="${extend.css.file}"
+    />
+  </target>
+
+</project>
