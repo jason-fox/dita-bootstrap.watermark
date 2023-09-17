@@ -7,6 +7,9 @@
 This is a [DITA-OT Plug-in](https://www.dita-ot.org/plugins) to add a watermark to generated HTML. The plugin
 extends the DITA Bootstrap HTML.
 
+<img width="1372" src="https://github.com/jason-fox/dita-bootstrap.watermark/assets/3439249/8eb73529-acb6-4682-a5bf-94ece85e07c8">
+
+
 <details>
 <summary><strong>Table of Contents</strong></summary>
 
